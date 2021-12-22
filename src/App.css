@@ -2,9 +2,6 @@
   text-align: center;
   font-family: monospace;
   background-color: whitesmoke;
-  width: 70%;
-  display: flex;
-  align-items: center;
 }
 
 .toolbar {
@@ -42,4 +39,45 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.homeDiv {
+  min-height: 775px;
+  display: flex;
+  flex-direction: column;
+}
+
+.homeDiv img {
+  width: 90%;
+}
+
+.nameDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.galleryDiv {
+  min-height: 775px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.galleryDiv img {
+  width: 200px;
+  margin: 10px;
+}
+
+.addBtn {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #e1e1e1;
+}
+
+.addBtn:hover {
+  background-color: #cbcbcb;
 }

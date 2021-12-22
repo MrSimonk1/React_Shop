@@ -1,13 +1,13 @@
-const Toolbar = () => {
+const Toolbar = ({fnChange}) => {
     return (
         <div className="toolbar">
-            <div className="homeToolbar grow1">
+            <div onClick={() => fnChange(0)} className="homeToolbar grow1">
                 Home
             </div>
-            <div className="shopToolbar grow1">
+            <div onClick={() => fnChange(1)} className="shopToolbar grow1">
                 Shop
             </div>
-            <div className="cartToolbar grow1 d-flex">
+            <div onClick={() => fnChange(2)} className="cartToolbar grow1 d-flex">
                 <div>
                     Cart
                 </div>
