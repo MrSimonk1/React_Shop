@@ -18,14 +18,33 @@ import {useState} from "react";
 function App() {
 
   const [getChangeBar, setChangeBar] = useState(0);
+  const [getCartAmount, setCartAmount] = useState(0);
+  const [getCartItems, setCartItems] = useState([]);
+  const [getAmountChair, setAmountChair] = useState(0);
+  const [getCorrectAmount, setCorrectAmount] = useState(1);
+  const [getTotalPrice, setTotalPrice] = useState(0);
 
   function changeBar(num) {
       setChangeBar(num);
   }
 
+  function selectItem(num) {
+      console.log(num);
+      setCartItems([...getCartItems, {image: products[num].image, title: products[num].title, price: products[num].price, amount: getAmountChair}]);
+      setTotalPrice(getTotalPrice + products[num].price);
+  }
+
+  function addOne(num) {
+      console.log(num);
+  }
+
+  function removeOne(num) {
+      console.log(num);
+  }
+
   const products = [
         {
-            image: "https://www.smow.com/pics/vt-078-000/a/vitra-panton-chair-dark-lime_zoom.jpg",
+            image: "https://cdn.shopify.com/s/files/1/0253/8255/1597/products/CHAIR-ARM01-GREEN-1_1024x1024@2x.png?v=1579480939",
             title: "green chair",
             price: 35.38
         },
@@ -35,32 +54,68 @@ function App() {
             price: 19.99
         },
         {
-            image: "https://ii.worldmarket.com/fcgi-bin/iipsrv.fcgi?FIF=/images/worldmarket/source/87344_XXX_v1.tif&qlt=50&wid=650&cvt=jpeg",
+            image: "https://www.dubingiai.lt/10317/fotelis-goudafc-31.jpg",
             title: "fotelis chair",
             price: 55
         },
         {
-            image: "https://5.imimg.com/data5/YF/OU/MY-18325580/revolving-office-chair-500x500.jpg",
+            image: "https://ae01.alicdn.com/kf/HTB1ucoRXAL0gK0jSZFAq6AA9pXaG/Office-Chair-Multifunction-Office-Computer-Cowhide-Chair-Swivel-Reclining-Boss-Chair-Household-Gaming-Chaise-Silla-Oficina.jpg_Q90.jpg_.webp",
             title: "Boss chair",
             price: 128
         },
         {
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Set_of_fourteen_side_chairs_MET_DP110780.jpg/220px-Set_of_fourteen_side_chairs_MET_DP110780.jpg",
+            image: "https://demo.cosmoswp.com/demo-117/wp-content/uploads/sites/41/2020/09/product8.png",
             title: "king chair",
             price: 88.25
         },
-    ]
+    ];
+
+  // const productsSelected = [
+  //       {
+  //           image: "https://cdn.shopify.com/s/files/1/0253/8255/1597/products/CHAIR-ARM01-GREEN-1_1024x1024@2x.png?v=1579480939",
+  //           title: "green chair",
+  //           price: 35.38,
+  //           amount: 0
+  //       },
+  //       {
+  //           image: "https://img80003444.weyesimg.com/uploads/uqe8s08c.allweyes.com/images/15819959503769.png?imageView2/2/w/1081/q/95/format/webp",
+  //           title: "simple chair",
+  //           price: 19.99,
+  //           amount: 0
+  //       },
+  //       {
+  //           image: "https://www.dubingiai.lt/10317/fotelis-goudafc-31.jpg",
+  //           title: "fotelis chair",
+  //           price: 55,
+  //           amount: 0
+  //       },
+  //       {
+  //           image: "https://ae01.alicdn.com/kf/HTB1ucoRXAL0gK0jSZFAq6AA9pXaG/Office-Chair-Multifunction-Office-Computer-Cowhide-Chair-Swivel-Reclining-Boss-Chair-Household-Gaming-Chaise-Silla-Oficina.jpg_Q90.jpg_.webp",
+  //           title: "Boss chair",
+  //           price: 128,
+  //           amount: 0
+  //       },
+  //       {
+  //           image: "https://demo.cosmoswp.com/demo-117/wp-content/uploads/sites/41/2020/09/product8.png",
+  //           title: "king chair",
+  //           price: 88.25,
+  //           amount: 0
+  //       },
+  //   ];
+
 
   return (
     <div className="App">
         <div className="all">
-            <Toolbar fnChange={changeBar}/>
+            <Toolbar fnChange={changeBar} amount={getCartAmount}/>
             {getChangeBar === 0 && <Home/>}
-            {getChangeBar === 1 && <Gallery products={products}/>}
-            {getChangeBar === 2 && <ShoppingCart/>}
+            {getChangeBar === 1 && <Gallery products={products}
+                                            fnSelect={selectItem}/>}
+            {getChangeBar === 2 && <ShoppingCart cartItems={getCartItems}
+                                                 totalPrice={getTotalPrice}
+                                                 fnAdd={addOne}
+                                                 fnRemove={removeOne}/>}
         </div>
-
-
     </div>
   );
 }

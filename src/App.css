@@ -17,6 +17,10 @@
   flex: 1;
 }
 
+.grow2 {
+  flex: 2;
+}
+
 .d-flex {
   display: flex;
 }
@@ -80,4 +84,28 @@
 
 .addBtn:hover {
   background-color: #cbcbcb;
+}
+
+.itemInCart img {
+  width: 200px;
+}
+
+.itemInCart {
+  display: flex;
+  align-items: center;
+}
+
+.itemInCart button {
+  border: none;
+  border-radius: 50%;
+  background-color: #ee9d9d;
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.itemInCart button:hover {
+  background-color: #d96a6a;
 }

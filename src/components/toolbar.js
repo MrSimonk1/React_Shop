@@ -1,4 +1,4 @@
-const Toolbar = ({fnChange}) => {
+const Toolbar = ({fnChange, amount}) => {
     return (
         <div className="toolbar">
             <div onClick={() => fnChange(0)} className="homeToolbar grow1">
@@ -12,7 +12,7 @@ const Toolbar = ({fnChange}) => {
                     Cart
                 </div>
                 <div className="productCountDiv">
-                    0
+                    {amount}
                 </div>
 
             </div>
