@@ -14,7 +14,9 @@ const Toolbar = ({fnChange, amount}) => {
                 <div className="productCountDiv">
                     {amount}
                 </div>
-
+            </div>
+            <div onClick={() => fnChange(3)} className="addToolbar grow1">
+                Add
             </div>
         </div>
     );

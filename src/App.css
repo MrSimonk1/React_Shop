@@ -93,6 +93,7 @@
 .itemInCart {
   display: flex;
   align-items: center;
+  width: 90%;
 }
 
 .itemInCart button {
@@ -108,4 +109,42 @@
 
 .itemInCart button:hover {
   background-color: #d96a6a;
+}
+
+.cartDiv {
+  min-height: 775px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addDiv {
+  min-height: 775px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputsDiv input {
+  width: 20%;
+  padding: 10px;
+  font-size: 20px;
+  font-family: monospace;
+  margin: 10px;
+}
+
+.addDiv button {
+  padding: 20px;
+  font-family: monospace;
+  font-size: 20px;
+  margin-top: 50px;
+  width: 20%;
+  cursor: pointer;
+}
+
+.inputsDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
